@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install openjdk-11-jdk -y
+      - apt-get install gradle -y
+  pre-build:
+    commands:
+      - gradle clean
+  build:
+    commands:
+      - gradle build
+  post-build:
+    commands:
+      - echo "Build Completed!!"
+artifacts:
+  files:
+    - '**/*'
+      
+
+  
